@@ -8,11 +8,14 @@ export const FormLogin = ({setIsAuthenticated}) => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
 
-  const login = () => {
-    const rootEmail = 'root@gmail.com'
-    const rootPassword = '123456'
+  const rootUser = {
+    email: 'root@gmail.com',
+    password: 'root123'
+  }
 
-    if (email === rootEmail && password === rootPassword) {
+  const login = () => {
+
+    if (email === rootUser.email && password === rootUser.password) {
       setEmail(email)
       setIsAuthenticated(true)
       history.push('/logout')
